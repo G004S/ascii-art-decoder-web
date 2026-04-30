@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Welcome to Decoder</h1>
+<form action="/decoder" method="POST">
+    <textarea name="input">{{.Input}}</textarea><br>
+    <button type="submit">Generate</button>
+</form>
+
+
+{{if .Result}}
+    <h2>Result:</h2>
+    <pre>{{.Result}}</pre>
+{{end}}
+
+{{if .Zdarova}}
+    <h2>zdarova:</h2>
+    <pre>{{.Zdarova}}</pre>
+{{end}}
+
+</body>
+</html>
