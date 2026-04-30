@@ -1,7 +1,7 @@
 package main
 
 import (
-    "fmt"
+    /* "fmt" */
     "net/http"
 	"html/template"
 	/* "os" */
@@ -29,39 +29,67 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 
 //Handle for decoder
 func DecoderHandler(w http.ResponseWriter, r *http.Request) {
-	//request parser. Prepares request data.
-	r.ParseForm()
-	//get "input" field from parsed request
-	input:= r.Form.Get("input")
+	//validate request
+	if r.Method == http.MethodPost{
+		r.ParseForm()
+		input:= r.Form.Get("input")
+		data:=PageData{}
 
-	data:=PageData{}
-	if input != ""{
-		res, err := Decode(input)
-		if err != nil{
-			fmt.Println(err)
+		//incorrect input -> error 400
+		if input == ""{
+			w.WriteHeader(http.StatusBadRequest)
+			tmpl.ExecuteTemplate(w, "decoder.html", nil)
+			return
 		}
-
+		res, err := Decode(input)
+		//incorrect input -> error 400
+		if err != nil{
+			w.WriteHeader(http.StatusBadRequest)
+			tmpl.ExecuteTemplate(w, "decoder.html", nil)
+			return
+		}
 		data.Result = res
 		data.Input = input
+		//correct input -> 202 accepted
+		w.WriteHeader(http.StatusAccepted)
+		tmpl.ExecuteTemplate(w, "decoder.html", data)
+	}else{
+		//incorrect request -> error 400
+		w.WriteHeader(http.StatusBadRequest)
+		tmpl.ExecuteTemplate(w, "decoder.html", nil)
 	}
-	tmpl.ExecuteTemplate(w, "decoder.html", data)
+
+	
+	
 }
 
 //Handle for encoder
 func EncoderHandler(w http.ResponseWriter, r *http.Request) {
-	data:= PageData{}
-	r.ParseForm()
-	input:= r.Form.Get("input")
-	if input != ""{
-		res,err:= Encode(input)
-		if err != nil{
-			fmt.Println(err)
+
+	if r.Method == http.MethodPost{
+		r.ParseForm()
+		input:= r.Form.Get("input")
+		data:=PageData{}
+
+		if input==""{
+			w.WriteHeader(http.StatusBadRequest)
+			tmpl.ExecuteTemplate(w,"encoder.html",nil)
+			return
 		}
-		data.Result = res
-		data.Input = input
+		res,err:=Encode(input)
+		if err!=nil{
+			w.WriteHeader(http.StatusBadRequest)
+			tmpl.ExecuteTemplate(w,"encoder.html",nil)
+		}
+		data.Result=res
+		data.Input=input
+		w.WriteHeader(http.StatusAccepted)
+		tmpl.ExecuteTemplate(w,"encoder.html",data)
+	}else{
+		w.WriteHeader(http.StatusBadRequest)
+		tmpl.ExecuteTemplate(w, "decoder.html", nil)
 	}
 	
-	tmpl.ExecuteTemplate(w, "encoder.html", data)
 }
 
 
