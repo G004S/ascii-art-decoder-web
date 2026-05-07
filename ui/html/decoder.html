@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/decoder.css">
+</head>
 <body>
 <h1>Welcome to Decoder</h1>
+<nav>
+    <a href="/">Home</a> |
+    <a href="/encoder">Encoder</a>
+</nav>
+<hr>
 <form action="/decoder" method="POST">
     <textarea name="input">{{.Input}}</textarea><br>
     <button type="submit">Generate</button>
@@ -10,7 +19,9 @@
 
 {{if .Result}}
     <h2>Result:</h2>
-    <pre>{{.Result}}</pre>
+    <div class="container">
+        <pre>{{.Result}}</pre>
+    </div>
 {{end}}
 </body>
 </html>

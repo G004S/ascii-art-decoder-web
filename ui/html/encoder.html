@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/encoder.css">
+</head>
+<body>
+<h1>Welcome to Encoder</h1>
+<nav>
+    <a href="/">Home</a> |
+    <a href="/decoder">Decoder</a>
+</nav>
+<div class="hr"></div>
+<div class="monitor"> 
+    <form action="/encoder" method="POST">
+        <textarea name="input">{{.Input}}</textarea><br>
+        <button type="submit">Generate</button>
+    </form>
+</div>
+
+
+{{if .Result}}
+    <h2>Result:</h2>
+    <div class="container">
+        <pre>{{.Result}}</pre>
+    </div>
+{{end}}
+</body>
+</html>

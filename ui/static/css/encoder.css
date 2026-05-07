@@ -1,0 +1,49 @@
+body {
+  background-color: #e4e1e3;
+  text-align: center;
+  font-family: 'VT323', monospace;
+  font-size: 24px;
+  background: radial-gradient(circle, #1a2e1a 0%, #0d0208 100%);
+  
+}
+
+@keyframes flicker {
+    0% { opacity: 0.97; }
+    5% { opacity: 0.95; }
+    10% { opacity: 0.9; }
+    15% { opacity: 0.95; }
+    100% { opacity: 1; }
+}
+
+pre {
+  display: block;
+  width: max-content;
+  margin: 0 auto; 
+  text-align: left;
+  font-family: monospace;
+  color: #008f11
+}
+h1 {
+  color: #008f11;
+}
+
+img{
+  width: 200px; 
+  vertical-align: middle;
+}
+
+textarea {
+    resize: none;
+    text-align: left;
+    width: 500px;
+    height: 400px;
+    background-color: #2a2a2a;
+    color: #008f11;
+    border: 1px solid #008f11;
+}
+.hr {
+  width: 100%;
+  border: none !important;
+  height: 5px !important;
+  background-color: #008f11 !important;
+}
