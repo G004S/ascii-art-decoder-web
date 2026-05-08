@@ -33,7 +33,7 @@ func main() {
 	mux.Handle("/static/", http.StripPrefix("/static/",fileServer))
 
 	//Creates a server (:port, mux)
-    err := http.ListenAndServe(":8082", mux)
+    err := http.ListenAndServe(":8084", mux)
 	if err != nil{
 		panic(err)
 	}

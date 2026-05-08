@@ -2,28 +2,49 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/css/encoder.css">
+    <link rel="stylesheet" href="/static/css/encoder.css?">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>Welcome to Encoder</h1>
-<nav>
-    <a href="/">Home</a> |
-    <a href="/decoder">Decoder</a>
-</nav>
-<div class="hr"></div>
-<div class="monitor"> 
-    <form action="/encoder" method="POST">
-        <textarea name="input">{{.Input}}</textarea><br>
-        <button type="submit">Generate</button>
-    </form>
-</div>
+<div class="terminal">
+    <h1>
+        ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM
+    </h1>
 
+    <h1>
+        COPYRIGHT 2075-2077 ROBCO INDUSTRIES
+    </h1>
 
-{{if .Result}}
-    <h2>Result:</h2>
-    <div class="container">
-        <pre>{{.Result}}</pre>
+    <h1>
+        -SERVER 76-
+    </h1>
+
+    
+
+    <div class="monitor"> 
+        <div class="monitor_header">
+            <h2>
+                -ASCII-ART ENCODING SYSTEM-
+            </h2>
+            <h2>
+                ===========================
+            </h2>
+            <form action="/encoder" method="POST">
+                <textarea name="input">{{.Input}}</textarea><br>
+                <button type="submit">>>Generate</button>
+            </form>
+        </div>
+
+        <div class ="result_block">
+            {{if .Result}}
+                <h2>Result:</h2>
+                <pre>{{.Result}}</pre>
+            {{end}}
+        </div>
     </div>
-{{end}}
+
+
+
+</div>
 </body>
 </html>

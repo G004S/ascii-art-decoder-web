@@ -1,36 +1,93 @@
-body {
-  background-color: #e4e1e3;
-  text-align: center;
-  font-family: 'VT323', monospace;
-  font-size: 24px;
-  background: radial-gradient(circle, #1a2e1a 0%, #0d0208 100%);
+.terminal::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(0, 0, 0, 0.343) 50%
+    ), 
+    linear-gradient(
+      45deg, 
+      rgba(255, 0, 0, 0.03), 
+      rgba(0, 255, 0, 0.163), 
+      rgba(0, 0, 255, 0.03)
+    );
+  background-size: 100% 10px, 10px 100%;
+  pointer-events: none;
+  z-index: 1 !important; 
+}
+
+.a{
+  color:#008f11
+}
+.terminal::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.4) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.monitor{
+  position: relative;
+  margin-top: 3%;
+  margin-left: 22%;
+  z-index: 20;
+  display: flex;
+  gap: 150px;
+  align-items: flex-start;
+  z-index: 50 !important;
   
 }
 
-@keyframes flicker {
-    0% { opacity: 0.97; }
-    5% { opacity: 0.95; }
-    10% { opacity: 0.9; }
-    15% { opacity: 0.95; }
-    100% { opacity: 1; }
+/* .io{
+  display: flex;
+  gap: 150px;
+  align-items: flex-start;
+} */
+
+
+body {
+  background-color: #c91a7a; 
+  background: radial-gradient(circle, #1a2e1a 0%, #0d0208 100%);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 24px;
+  color: #008f11;
+  margin: 0;
+  padding: 20px;
 }
 
-pre {
+/* pre {
   display: block;
   width: max-content;
   margin: 0 auto; 
   text-align: left;
   font-family: monospace;
   color: #008f11
+  
+} */
+
+button[type="submit"] {
+  background-color: transparent;
+  color: #008f11;
+  border: 2px solid #008f11;
+  padding: 10px 20px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 20px;
+  cursor: pointer;
 }
 h1 {
+  position: relative;
   color: #008f11;
+  text-align: center;
+  z-index: 50 !important;
 }
 
-img{
+/* img{
   width: 200px; 
   vertical-align: middle;
-}
+} */
 
 textarea {
     resize: none;
@@ -40,10 +97,4 @@ textarea {
     background-color: #2a2a2a;
     color: #008f11;
     border: 1px solid #008f11;
-}
-.hr {
-  width: 100%;
-  border: none !important;
-  height: 5px !important;
-  background-color: #008f11 !important;
 }
