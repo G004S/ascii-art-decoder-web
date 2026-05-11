@@ -1,0 +1,62 @@
+body{
+    background-image: url('/static/image/terminalscreen.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #0a0a0a;
+
+    display: flex;
+    /* This makes things stack one below another */
+    flex-direction: column; 
+    /* This centers the stack horizontally */
+    justify-content: center; 
+    /* This centers the stack vertically */
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.terminal-overlay {
+    font-size: 1.5rem;
+    color: #33ff33;
+    text-shadow: 0 0 5px #33ff33;
+    text-align: center;
+    margin-bottom: 50px;
+    z-index: 2;
+}
+button[type="submit"] {
+  background-color: transparent;
+  color: #33ff33;
+  text-shadow: 0 0 5px #33ff33;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.5rem;
+  cursor: pointer;
+  
+}
+
+.main_but{
+transition: all 0.3s ease-out;
+}
+
+
+.main_but:focus, .main_but:hover{
+    outline: none;
+    background-color: #33ff33;
+    color: #0a0a0a;
+}
+
+.navigation{
+    outline: none;
+    display: flex;
+    gap: 150px;
+    align-items: center;
+    position: relative;
+    color: #33ff33;
+    text-shadow: 0 0 5px #33ff33;
+    z-index: 10;
+}

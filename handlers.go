@@ -10,7 +10,7 @@ type PageData struct{
 //Handler for homepage
 func (app *application) HomeHandler(w http.ResponseWriter, r *http.Request) {
 	//executes HTML template (Writer, HTMLname, DATA)
-	app.templates.ExecuteTemplate(w, "index.html", nil)
+	app.templates.ExecuteTemplate(w, "home.html", nil)
 	
 }
 

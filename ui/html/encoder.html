@@ -7,6 +7,12 @@
 </head>
 <body>
 <div class="terminal">
+    <div class ="homeicon">
+        <a href="/" class="vault-button">
+            <img src="/static/image/homeicon.png" alt="Vault Boy">
+        </a>
+    </div>
+
     <h1>
         ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM
     </h1>
@@ -31,13 +37,14 @@
             </h2>
             <form action="/encoder" method="POST">
                 <textarea name="input">{{.Input}}</textarea><br>
-                <button type="submit">>>Generate</button>
+                <button class="main_but" type="submit">>>Encode</button>
             </form>
         </div>
 
         <div class ="result_block">
             {{if .Result}}
                 <h2>Result:</h2>
+                <h2>===========================</h2>
                 <pre>{{.Result}}</pre>
             {{end}}
         </div>
