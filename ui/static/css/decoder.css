@@ -2,10 +2,43 @@ body {
   background-color: #c91a7a; 
   background: radial-gradient(circle, #2e261a 0%, #0d0208 100%);
   font-family: 'Share Tech Mono', monospace;
-  /* font-size: 24px; */
   text-shadow: 0 0 2px #e8b454;
   color: #b67a0a;
   margin: 0;
+}
+
+.header{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+
+.homeicon{
+  position: absolute;    /* Takes icon out of the flow so text stays centered */
+  left: 100px;
+  padding-right: none;
+}
+
+
+.vault-button {
+  background-color: #008f11;
+  fill: #ffcc00;
+  height: auto;
+  width: 4rem;
+}
+
+
+.vault-button img {
+  border-radius: 30%;
+  padding-left: 13%;
+  width: 4rem;
+  height: 18%;
+  display: block;
 }
 
 .terminal{
@@ -50,6 +83,24 @@ body {
   color:#ba6407
 }
 
+/* home button settings */
+button[type="home"] {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* button ">>Encode" settings */
+.main_but{
+transition: all 0.3s ease-out;
+}
+.main_but:focus, .main_but:hover{
+    outline: none;
+    background-color: #ba6407;
+    color: #0a0a0a;
+}
+
 button[type="submit"] {
   background-color: transparent;
   color: #b67a0a;
@@ -60,15 +111,7 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-
-.main_but{
-transition: all 0.3s ease-out;
-}
-.main_but:focus, .main_but:hover{
-    outline: none;
-    background-color: #33ff33;
-    color: #0a0a0a;
-}
+/* header settings */
 h1 {
   position: relative;
   font-size: 3rem;
@@ -78,7 +121,6 @@ h1 {
 }
 
 textarea {
-  
   font-size: 0.8rem;
   resize: none;
   text-align: left;

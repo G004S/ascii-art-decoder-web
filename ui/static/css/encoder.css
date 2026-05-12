@@ -32,24 +32,37 @@
   pointer-events: none;
   z-index: 1; 
 } */
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px 0;
+}
+
+.homeicon{
+  position: absolute;    /* Takes icon out of the flow so text stays centered */
+  left: 100px;
+  padding-right: none;
+}
+
 
 .vault-button {
   background-color: #008f11;
   fill: #ffcc00;
-  width: 5rem;
-  height: 5rem;
   height: auto;
-  filter: drop-shadow(0 0 10px #33ff33);
+ /*  filter: drop-shadow(0 0 10px #33ff33); */
 }
-.homeicon{
-  margin-left:5%;
 
-}
 
 .vault-button img {
-    width: 3%;
-    height: 3%;
-    display: block; /* Removes a tiny gap browsers put under images */
+  border-radius: 30%;
+  padding-left: 13%;
+  width: 4rem;
+  height: 18%;
+  display: block;
 }
 
 .terminal::after {
@@ -77,6 +90,7 @@
 }
 
 body {
+  align-items: center;
   background-color: #c91a7a; 
   background: radial-gradient(circle, #1a2e1a 0%, #0d0208 100%);
   font-family: 'Share Tech Mono', monospace;
