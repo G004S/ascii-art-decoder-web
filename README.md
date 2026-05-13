@@ -81,7 +81,7 @@ The server returns proper HTTP response codes:
 ## 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://gitea.kood.tech/georgiisenotrusov/interface
 cd interface
 ```
 
