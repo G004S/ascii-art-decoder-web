@@ -57,9 +57,9 @@ This project allows users to both **ENCODE** and **DECODE** text-based artwork d
 |--------|--------------|-------------|
 | GET    | `/`          | Homepage |
 | GET    | `/encoder`   | Encoder page |
-| POST   | `/encoder`   | Encode submitted text |
+| POST   | `/encoder`   | Encode submitted ASCII-art |
 | GET    | `/decoder`   | Decoder page |
-| POST   | `/decoder`   | Decode submitted data |
+| POST   | `/decoder`   | Decode submitted ASCII-art |
 
 ---
 
@@ -70,7 +70,7 @@ The server returns proper HTTP response codes:
 | Code | Meaning |
 |------|----------|
 | `200 OK` | Successful request |
-| `202 Accepted` | Successfully processed decoding request |
+| `202 Accepted` | Successfully processed decoding/encoding request |
 | `400 Bad Request` | Malformed or invalid input |
 | `404 Not Found` | Invalid route |
 
@@ -144,7 +144,7 @@ Navigate to:
 http://localhost:8084/encoder
 ```
 
-Enter plain text and generate encoded artwork.
+Enter ASCII-art, recieve encoded version.
 
 ---
 
@@ -156,7 +156,7 @@ Navigate to:
 http://localhost:8084/decoder
 ```
 
-Enter encoded artwork and decode it back into text.
+Enter encoded piece and decode it back into ASCII-art.
 
 ---
 
@@ -169,8 +169,6 @@ Features include:
 - Styled forms
 - Buttons
 - Responsive layout
-- Colored status messages
-- Clean typography
 
 ---
 
