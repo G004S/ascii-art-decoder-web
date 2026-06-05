@@ -65,13 +65,14 @@ func (app *application) EncoderHandler(w http.ResponseWriter, r *http.Request) {
 		if err!=nil{
 			w.WriteHeader(http.StatusBadRequest)
 			app.templates.ExecuteTemplate(w,"encoder.html",nil)
+			return
 		}
 		data.Result=res
 		data.Input=input
 		w.WriteHeader(http.StatusAccepted)
 			app.templates.ExecuteTemplate(w,"encoder.html",data)
 	}else{
-			app.templates.ExecuteTemplate(w, "encoder.html", nil)
+		app.templates.ExecuteTemplate(w, "encoder.html", nil)
 	}
 	
 }

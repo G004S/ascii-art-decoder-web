@@ -20,7 +20,7 @@ func main() {
 	app:= &application{
 		templates: tmpl,
 	}
-	
+
 
 	//if mux recieves "/*" it pulls a specific handle.
     mux.HandleFunc("/", app.HomeHandler)
